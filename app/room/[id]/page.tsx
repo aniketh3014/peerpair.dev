@@ -7,9 +7,13 @@ import { PeerStrem } from "./VideoStrem";
 import prisma from "@/db/db";
 import { getServerSession } from "next-auth";
 import { authConfig } from "@/lib/authConfig";
+import { redirect } from "next/navigation";
 
 export default async function(props: {params: {id: string}}) {
     const session = await getServerSession(authConfig);
+    if(!session?.user) {
+        redirect("/")
+    }
     const user = await prisma.user.findFirst({
         where: {
             email: session!.user?.email

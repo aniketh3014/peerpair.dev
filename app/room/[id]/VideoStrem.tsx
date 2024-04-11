@@ -13,9 +13,10 @@ import {
   StreamVideoClient,
 } from "@stream-io/video-react-sdk";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { generateTokenAction } from "@/app/actions/tokengenAction";
 import { useRouter } from "next/navigation";
+import { deleteRoom } from "@/app/actions/deleteRoom";
 
 const apiKey = process.env.NEXT_PUBLIC_STREAM_KEY as string;
 
@@ -61,7 +62,10 @@ export function PeerStrem({ room, Id }: { room: Room, Id: string}) {
           <StreamCall call={call}>
             <SpeakerLayout />
             <CallControls
-              onLeave={() => {
+              onLeave={async() => {
+                if(room.userId === Id) {
+                  await deleteRoom({ roomId: room.id})
+                }
                 router.push("/rooms");
               }}
             />

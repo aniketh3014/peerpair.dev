@@ -1,15 +1,16 @@
 import { JoinCard } from "@/components/JoinCard";
 import { authConfig } from "@/lib/authConfig";
 import { getServerSession } from "next-auth";
-import { redirect } from 'next/navigation'
 import { getRooms } from "../../data-src/dataSrc";
-import { Button } from "@/components/ui/button";
 import { CreatePageButton } from "@/components/CreatePageButton";
+import { redirect } from "next/navigation";
+import { unstable_noStore } from "next/cache";
 
 export default async function() {
+    unstable_noStore();
     const session = await getServerSession(authConfig);
-    if(!session) {
-        throw new Error("Session not found")
+    if(!session?.user) {
+        redirect("/")
     }
     const rooms = await getRooms();
     return(

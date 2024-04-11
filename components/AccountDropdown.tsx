@@ -27,7 +27,9 @@ export default function AccountDropdown() {
                 <DropdownMenuContent>
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => signOut()}>
+                    <DropdownMenuItem onClick={() => signOut({
+                        callbackUrl: "/",
+                    })}>
                         <LogInIcon className="pr-1"/> Log out
                     </DropdownMenuItem>
                 </DropdownMenuContent>
