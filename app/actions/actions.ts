@@ -17,7 +17,7 @@ export async function CreateRoom(roomData:Room) {
         if(!session || !session.user) {
             throw new Error("Session or user not found")
         }
-        const response = await prisma.room.create({
+        await prisma.room.create({
             data: {
                 name: roomData.name,
                 description: roomData.description,
@@ -26,7 +26,6 @@ export async function CreateRoom(roomData:Room) {
                 githubRepo: roomData.githubRepo
             }
         })
-        console.log(response)
     } catch (error) {
         console.log(error)
     }

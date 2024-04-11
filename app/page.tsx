@@ -1,11 +1,11 @@
 import prisma from "@/db/db";
 
 export default async function Home() {
-  const user = await prisma.user.findMany()
+  const rooms = await prisma.room.findMany()
   return (
     <div>
-      {user.map((user) => (
-        <div key={user.id}>{user.name}</div>
+      {rooms.map((room) => (
+        <div key={room.id}>{room.name}</div>
       ))}
     </div>
   );
