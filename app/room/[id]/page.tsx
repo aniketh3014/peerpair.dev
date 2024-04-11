@@ -3,11 +3,25 @@ import { GithubIcon } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge"
 import { sptliTag } from "@/components/Tags";
+import { PeerStrem } from "./VideoStrem";
+import prisma from "@/db/db";
+import { getServerSession } from "next-auth";
+import { authConfig } from "@/lib/authConfig";
 
 export default async function(props: {params: {id: string}}) {
-
+    const session = await getServerSession(authConfig);
+    const user = await prisma.user.findFirst({
+        where: {
+            email: session!.user?.email
+        }, select: {
+            id: true
+        }
+    })
     const roomId = props.params.id;
     const room = await getRoom(roomId);
+    if(!user) {
+        return <div>User not found</div>
+    }
     if(!room) {
         return <div>Room not found</div>
     }
@@ -17,7 +31,7 @@ export default async function(props: {params: {id: string}}) {
             <div className="grid grid-cols-6 min-h-screen gap-2">
                 <div className="col-span-4 p-2">
                     <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
-                    Vide cat
+                      <PeerStrem room={room} Id={user.id} />
                     </div>
                 </div>
                 
