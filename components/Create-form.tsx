@@ -40,7 +40,7 @@ export function CreateForm() {
       async function onSubmit(values: z.infer<typeof formSchema>) {
         //@ts-ignore
         await CreateRoom(values)
-        router.push("/");
+        router.push("/rooms");
       }
 
   return (
@@ -84,12 +84,12 @@ export function CreateForm() {
           name="language"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Primary Programming Language</FormLabel>
+              <FormLabel>Tags</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} placeholder="e.g.typescript, next.js, prisma..."/>
               </FormControl>
               <FormDescription>
-                Please write what language you will be coding in
+                Please list the languages, frameworks, or libraries you will be using
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -102,7 +102,7 @@ export function CreateForm() {
             <FormItem>
               <FormLabel>GitHub Repository</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} placeholder="e.g.https://github.com/aniketh3014"/>
               </FormControl>
               <FormDescription>
                 Please provide a link to your GitHub repository

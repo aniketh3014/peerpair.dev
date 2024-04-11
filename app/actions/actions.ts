@@ -4,6 +4,7 @@ import prisma from "@/db/db";
 import { authConfig } from "@/lib/authConfig";
 import { Room } from "@prisma/client";
 import { getServerSession } from "next-auth";
+import { revalidatePath } from "next/cache";
 export async function CreateRoom(roomData:Room) {
     const session = await getServerSession(authConfig);
     const data = await prisma.user.findFirst({
@@ -29,5 +30,5 @@ export async function CreateRoom(roomData:Room) {
     } catch (error) {
         console.log(error)
     }
-    
+    revalidatePath("/rooms");
 }
