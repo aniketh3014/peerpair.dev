@@ -10,6 +10,7 @@ import {
 import { LogInIcon } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export default function AccountDropdown() {
     const session = useSession();
@@ -20,8 +21,14 @@ export default function AccountDropdown() {
                     <div className="flex hover:underline">
                         <div className="flex flex-col justify-center px-2">{session.data?.user.name}</div>
                         <div>
-                          <img src={session.data?.user.image!} alt="profile avatar" className="h-10 w-10 rounded-full"/>
-                        </div>
+  <Image 
+    src={session.data?.user.image || '/default-avatar.png'} 
+    alt="Profile avatar" 
+    className="rounded-full" 
+    width={40} 
+    height={40}
+  />
+</div>
                     </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>

@@ -22,9 +22,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
           <Providers>
-            <Header />
-            <NextTopLoader />
-            {children}
+            <div className="fixed top-0 w-full z-[50] border-transparent border-b">
+              <Header/>
+            </div>
+              <NextTopLoader />
+            <div className="pt-">
+              {children}
+            </div>
+            
           </Providers>
         </body>
     </html>

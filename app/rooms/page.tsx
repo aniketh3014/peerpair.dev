@@ -6,15 +6,15 @@ import { CreatePageButton } from "@/components/CreatePageButton";
 import { redirect } from "next/navigation";
 import { unstable_noStore } from "next/cache";
 
-export default async function() {
-    unstable_noStore();
+export default async function RoomsPage() {
+
     const session = await getServerSession(authConfig);
     if(!session?.user) {
         redirect("/")
     }
     const rooms = await getRooms();
     return(
-        <div className="container mx-auto">
+        <div className="container mx-auto pt-28">
             <div className="flex justify-between px-16 py-10">
                 <div>
                     <h1 className="text-5xl font-bold">Rooms</h1>

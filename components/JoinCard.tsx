@@ -11,9 +11,9 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { Room } from "@prisma/client";
-import { GithubIcon } from "lucide-react";
 import { sptliTag } from "./Tags";
 import { Badge } from "./ui/badge";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 export function JoinCard({ room }: { room: Room }) {
     const tags = sptliTag(room.language);
@@ -27,8 +27,8 @@ export function JoinCard({ room }: { room: Room }) {
             <CardContent>
                 <div className="flex flex-wrap gap-2">
                     {tags.map((tag) => (
-                        <div>
-                            <Badge key={tag} variant="outline">
+                        <div key={room.id}>
+                            <Badge variant="outline">
                                 {tag}
                             </Badge>
                         </div>
@@ -43,7 +43,7 @@ export function JoinCard({ room }: { room: Room }) {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <GithubIcon />
+                        <IconBrandGithub />
                         Github Project
                     </Link>
                 )}
