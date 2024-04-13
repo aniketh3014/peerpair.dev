@@ -9,8 +9,8 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PeerPair",
-  description: "PeerPair is a platform for finding study partners."
+  title: "PeerPair.dev",
+  description: "PeerPair.dev is a platform for developers to collaborate and do pair programming with their peers.",
 };
 
 export default function RootLayout({
@@ -20,6 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="icon"
+          href="/logo.png?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+      </head>
       <body className={inter.className}>
           <Providers>
             <div className="fixed top-0 w-full z-[50] border-transparent border-b">
