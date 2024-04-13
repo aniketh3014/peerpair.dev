@@ -3,6 +3,7 @@
 import { ModeToggle } from "../ModeToggle";
 import AccountDropdown from "../AccountDropdown";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Header() {
     return (
@@ -10,8 +11,11 @@ export function Header() {
             <div className="container mx-auto">
             <div className="flex justify-between">
                 <Link href="/" className="flex flex-col justify-center">
-                    <div className=" hover:underline">
-                        LOGO
+                    <div className="flex">
+                        <Image src="/logo.png" alt="logo" width={55} height={55} />
+                        <div className="flex flex-col justify-center font-bold text-teal-400">
+                            PeerPair.dev
+                        </div>
                     </div>
                 </Link>
             <div className="flex">

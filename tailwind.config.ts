@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+//@ts-ignore
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 import svgToDataUri from "mini-svg-data-uri"
 
