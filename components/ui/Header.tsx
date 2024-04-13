@@ -6,7 +6,8 @@ import Link from "next/link";
 
 export function Header() {
     return (
-        <header className="bg-slate-100/80 dark:bg-gray-900/90 mx-auto p-4 lg:px-10">
+        <header className="bg-slate-100/80 dark:bg-gray-900/90 p-4 lg:px-10">
+            <div className="container mx-auto">
             <div className="flex justify-between">
                 <Link href="/" className="flex flex-col justify-center">
                     <div className=" hover:underline">
@@ -19,6 +20,7 @@ export function Header() {
                 </div>
                 <AccountDropdown />
             </div>
+        </div>
         </div>
         </header>
     );

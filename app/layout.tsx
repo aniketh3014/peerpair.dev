@@ -26,7 +26,7 @@ export default function RootLayout({
               <Header/>
             </div>
               <NextTopLoader />
-            <div className="pt-">
+            <div>
               {children}
             </div>
             

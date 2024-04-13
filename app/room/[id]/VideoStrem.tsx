@@ -17,7 +17,6 @@ import { use, useEffect, useState } from "react";
 import { generateTokenAction } from "@/app/actions/tokengenAction";
 import { useRouter } from "next/navigation";
 import { deleteRoom } from "@/app/actions/deleteRoom";
-import { revalidatePath } from "next/cache";
 
 const apiKey = process.env.NEXT_PUBLIC_STREAM_KEY as string;
 

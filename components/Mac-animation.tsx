@@ -9,7 +9,7 @@ export function MacbookScrollDemo() {
       <MacbookScroll
         title={
           <span className="text-neutral-700 dark:text-neutral-400 lg:text-2xl">
-            Real-Time Collaboration: Share screens, video chat, and <br/> code together seamlessly with <p className="text-blue-500">PeerPair.dev</p>
+            Start collaborating with your peers seamlessly <br/>with<p className="text-blue-500 inline"> PeerPair.dev</p>
           </span>
         }
         src={`/linear.webp`}

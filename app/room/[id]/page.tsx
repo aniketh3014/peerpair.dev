@@ -3,11 +3,12 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { sptliTag } from "@/components/Tags";
 import { PeerStrem } from "./VideoStrem";
-import prisma from "@/db/db";
 import { getServerSession } from "next-auth";
 import { authConfig } from "@/lib/authConfig";
 import { redirect } from "next/navigation";
 import { IconBrandGithub } from "@tabler/icons-react";
+import { getUserId } from "@/app/actions/getUseId";
+import prisma from "@/db/db";
 
 export default async function RoomPage(props: { params: { id: string } }) {
     const session = await getServerSession(authConfig);
