@@ -12,7 +12,7 @@ export function MacbookScrollDemo() {
             Start collaborating with your peers seamlessly <br/>with<p className="text-blue-500 inline"> PeerPair.dev</p>
           </span>
         }
-        src={`/demo2.png`}
+        src={`/demo.png`}
         showGradient={false}
       />
       <div className="flex justify-center">
