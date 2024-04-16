@@ -17,7 +17,7 @@ export default async function RoomsPage() {
     
     return (
         <div className="container mx-auto pt-28">
-            <div className="flex justify-between px-16 py-10">
+            <div className="flex justify-between py-10">
                 <div>
                     <h1 className="text-5xl font-bold">Rooms</h1>
                 </div>
