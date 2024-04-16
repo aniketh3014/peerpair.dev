@@ -18,7 +18,7 @@ import { generateTokenAction } from "@/app/actions/tokengenAction";
 import { useRouter } from "next/navigation";
 import { deleteRoom } from "@/app/actions/deleteRoom";
 
-const apiKey = process.env.STREAM_KEY as string;
+const apiKey = process.env.NEXT_PUBLIC_STREAM_KEY as string;
 
 export function PeerStrem({ room, Id }: { room: Room, Id: string}) {
   const session = useSession();
