@@ -31,8 +31,6 @@ yarn install
 
 ```bash
 npm run dev
-#or 
-yarn dev
 ```
 
 All set! now you can open http://localhost:3000 to see the running project.
