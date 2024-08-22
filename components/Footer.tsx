@@ -19,7 +19,7 @@ export function Footer() {
                     <div className="mt-6 lg:mt-0 lg:flex-1 pt-6">
                         <div>
                             <div className="text-center p-4 bg-gray-900 text-white">
-                                <p>&copy; 2024 Your Company. All rights reserved.</p>
+                                <p>Copyright &copy; 2024. All rights reserved.</p>
                             </div>
                         </div>
                     </div>
