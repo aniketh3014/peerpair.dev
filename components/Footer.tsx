@@ -18,12 +18,8 @@ export function Footer() {
                     </div>
                     <div className="mt-6 lg:mt-0 lg:flex-1 pt-6">
                         <div>
-                            <div>
-                                <h3 className="text-gray-700 uppercase dark:text-white">Developer</h3>
-                                <span className="block mt-2">Aniket Ghosh</span>
-                                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline "> <a className="flex" href="https://github.com/aniketh3014" target="_blank" rel="noopener noreferrer"><IconBrandGithub/> GitHub</a></span>
-                                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"><a className="flex" href="https://twitter.com/aniketh3014 " target="_blank" rel="noopener noreferrer"><IconBrandTwitter/>Twitter</a></span>
-                                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"><a className="flex" href="https://www.linkedin.com/in/aniket-ghosh-8b0b53281/" target="_blank" rel="noopener noreferrer"><IconBrandLinkedin/>Linkedin</a></span>
+                            <div className="text-center p-4 bg-gray-900 text-white">
+                                <p>&copy; 2024 Your Company. All rights reserved.</p>
                             </div>
                         </div>
                     </div>
